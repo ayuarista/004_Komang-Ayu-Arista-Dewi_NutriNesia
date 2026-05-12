@@ -1,7 +1,3 @@
-/* ============================================
-   NutriNesia - Konsultasi Page Styles
-   Vanilla CSS using design tokens from global.css
-   ============================================ */
 
 .konsultasi-main {
   max-width: var(--container-max);
@@ -724,3 +720,219 @@
 .konsultasi-card:nth-child(6) { animation-delay: 0.3s; }
 .konsultasi-card:nth-child(7) { animation-delay: 0.35s; }
 .konsultasi-card:nth-child(8) { animation-delay: 0.4s; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .konsultasi-main {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .konsultasi-hero {
+    padding: var(--space-8);
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+  }
+
+  .konsultasi-hero-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .konsultasi-hero-image {
+    height: 280px;
+  }
+
+  .konsultasi-hero-floating-card {
+    left: -8px;
+    bottom: -16px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .konsultasi-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .konsultasi-search-group {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* 2-col grid */
+  .konsultasi-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .konsultasi-featured {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-12);
+  }
+
+  .konsultasi-featured-card {
+    padding: var(--space-8);
+  }
+}
+
+/* Mobile: 480px - 767px */
+@media (max-width: 767px) {
+  .konsultasi-main {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  /* Hero */
+  .konsultasi-hero {
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    gap: var(--space-6);
+  }
+
+  .konsultasi-hero-content {
+    flex: 1 1 100%;
+  }
+
+  .konsultasi-hero-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .konsultasi-hero-desc {
+    font-size: 14px;
+    margin-bottom: var(--space-6);
+  }
+
+  .konsultasi-hero-actions {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .konsultasi-btn-primary,
+  .konsultasi-btn-ghost {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  /* Toolbar */
+  .konsultasi-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .konsultasi-section-title {
+    font-size: var(--font-size-h2);
+  }
+
+  .konsultasi-search-group {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Catalog */
+  .konsultasi-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .konsultasi-card {
+    padding: var(--space-5);
+  }
+
+  /* Featured */
+  .konsultasi-featured {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-10);
+  }
+
+  .konsultasi-featured-card {
+    padding: var(--space-6);
+  }
+
+  .konsultasi-featured-title {
+    font-size: var(--font-size-h2);
+  }
+
+  .konsultasi-cta-card {
+    padding: var(--space-6);
+  }
+
+  .konsultasi-category-chip {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+
+/* Small Mobile: < 480px */
+@media (max-width: 479px) {
+  .konsultasi-main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .konsultasi-hero {
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .konsultasi-hero-badge {
+    font-size: 10px;
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .konsultasi-hero-title {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+
+  .konsultasi-hero-desc {
+    font-size: 13px;
+  }
+
+  .konsultasi-hero-floating-card {
+    display: none; /* Too tight on very small screens */
+  }
+
+  .konsultasi-section-title {
+    font-size: 18px;
+  }
+
+  .konsultasi-categories {
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+
+  .konsultasi-category-chip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .konsultasi-card {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .konsultasi-card-title {
+    font-size: 15px;
+  }
+
+  .konsultasi-featured-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+
+  .konsultasi-featured-title {
+    font-size: 18px;
+  }
+
+  .konsultasi-featured-desc {
+    font-size: 13px;
+  }
+
+  .konsultasi-cta-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+}

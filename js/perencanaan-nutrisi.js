@@ -1,9 +1,3 @@
-/* ============================================
-   NutriNesia - Perencanaan Nutrisi Page Logic
-   Handles: meal swap modal, recipe detail modal,
-   and dynamic meal card updates.
-   ============================================ */
-
 (function () {
   'use strict';
 

@@ -1,7 +1,3 @@
-/* ================================================================
-   KOMUNITAS DETAIL — Forum Post Detail
-   ================================================================ */
-
 .kd-main {
   max-width: var(--max-width-container, 1280px);
   margin: 0 auto;
@@ -669,4 +665,241 @@
 .kd-promo-btn:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .kd-main {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  /* Single column — sidebar stacks below content */
+  .kd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar becomes horizontal row of cards */
+  .kd-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  .kd-author {
+    padding: var(--space-5);
+  }
+
+  .kd-hero-title {
+    font-size: 22px;
+  }
+
+  .kd-discussion-actions {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
+
+/* Mobile: 480px - 767px */
+@media (max-width: 767px) {
+  .kd-main {
+    padding: var(--space-5) var(--space-4);
+    gap: var(--space-4);
+  }
+
+  /* Breadcrumb: truncate long paths */
+  .kd-breadcrumb {
+    font-size: 11px;
+  }
+
+  .kd-breadcrumb-current {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .kd-hero {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+  }
+
+  .kd-hero-overlay {
+    padding: var(--space-4);
+  }
+
+  .kd-hero-title {
+    font-size: 18px;
+  }
+
+  .kd-hero-desc {
+    display: none; /* Too cluttered on small screens */
+  }
+
+  /* Content */
+  .kd-content {
+    padding: var(--space-4);
+  }
+
+  .kd-meta {
+    gap: var(--space-3);
+  }
+
+  .kd-meta-item {
+    font-size: 11px;
+  }
+
+  /* Discussion */
+  .kd-discussion {
+    padding: var(--space-4);
+  }
+
+  .kd-discussion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .kd-discussion-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .kd-action-btn {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+
+  /* Comment box */
+  .kd-comment-box {
+    gap: var(--space-2);
+  }
+
+  .kd-avatar-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .kd-textarea {
+    min-height: 80px;
+    font-size: 14px; /* Prevents iOS zoom */
+  }
+
+  /* Sidebar */
+  .kd-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .kd-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: left;
+    padding: var(--space-4);
+  }
+
+  .kd-author-avatar {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .kd-follow-btn {
+    width: auto;
+    padding: 8px 16px;
+  }
+
+  .kd-stats {
+    padding: var(--space-4);
+  }
+
+  .kd-related {
+    padding: var(--space-4);
+  }
+
+  .kd-related-thumb {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Info grid */
+  .kd-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile: < 480px */
+@media (max-width: 479px) {
+  .kd-main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .kd-hero {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+  }
+
+  .kd-hero-title {
+    font-size: 16px;
+  }
+
+  .kd-content {
+    padding: var(--space-3);
+  }
+
+  .kd-discussion {
+    padding: var(--space-3);
+  }
+
+  .kd-prose p {
+    font-size: 13px;
+  }
+
+  .kd-prose h2 {
+    font-size: 15px;
+  }
+
+  .kd-author {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-4);
+  }
+
+  .kd-author-avatar {
+    margin: 0 auto var(--space-2);
+  }
+
+  .kd-follow-btn {
+    width: 100%;
+  }
+
+  .kd-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kd-related-thumb {
+    width: 48px;
+    height: 48px;
+  }
+
+  .kd-related-title {
+    font-size: 11px;
+  }
+
+  .kd-reply {
+    gap: var(--space-2);
+  }
+
+  .kd-breadcrumb {
+    display: none;
+  }
 }

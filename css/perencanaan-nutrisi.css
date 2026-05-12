@@ -1,8 +1,3 @@
-/* ============================================
-   NutriNesia - Perencanaan Nutrisi Page
-   Vanilla CSS using global.css design tokens
-   ============================================ */
-
 .pn-main {
   max-width: 1280px;
   margin: 0 auto;
@@ -13,7 +8,7 @@
 }
 
 /* ============================================
-   HERO - Target Kesehatan & Macros Overview
+   HERO
    ============================================ */
 .pn-hero {
   display: grid;

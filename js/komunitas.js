@@ -1,4 +1,4 @@
-/* Komunitas — Forum Tips Sehat */
+  /* Komunitas — Forum Tips Sehat */
 (function () {
   'use strict';
 

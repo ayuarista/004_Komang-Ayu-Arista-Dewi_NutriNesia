@@ -1,7 +1,3 @@
-/* ============================================
-   NutriNesia - Analisis Gizi Result Styles
-   ============================================ */
-
 @import url("./analisis-gizi.css");
 
 .score-card.has-result {
@@ -28,5 +24,3 @@
   background: rgba(255, 255, 255, 0.8);
   transform: translateX(4px);
 }
-
-/* History in result page uses shared .history-item from analisis-gizi.css */
