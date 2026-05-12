@@ -782,7 +782,7 @@
 
 /* About NutriNesia Section */
 .about-nutrinesia {
-  padding: 100px 0;
+  padding: 65px 0;
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -891,9 +891,9 @@
 }
 
 .ed-desc {
-  font-size: 18px;
   color: rgb(85, 83, 83);
   margin-bottom: 40px;
+  font-size: 17px;
 }
 
 .ed-list {
@@ -1566,10 +1566,6 @@
     font-size: 16px;
   }
 
-  .ed-desc {
-    font-size: 16px;
-    margin-bottom: 28px;
-  }
 
   .ed-list {
     gap: 18px;

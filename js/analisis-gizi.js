@@ -3,40 +3,7 @@
 
   // Constants
   const HISTORY_KEY = 'nutrinesia-scan-history';
-  const DEFAULT_HISTORY = [
-    {
-      id: 1,
-      name: 'Salad Salmon Avocado',
-      score: 94,
-      calories: 345,
-      imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop',
-      timestamp: new Date(Date.now() - 3600000).toISOString()
-    },
-    {
-      id: 2,
-      name: 'Gado-gado Jakarta',
-      score: 86,
-      calories: 420,
-      imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop',
-      timestamp: new Date(Date.now() - 14400000).toISOString()
-    },
-    {
-      id: 3,
-      name: 'Smoothie Bowl Berry',
-      score: 92,
-      calories: 280,
-      imageUrl: 'https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=400&h=300&fit=crop',
-      timestamp: new Date(Date.now() - 86400000).toISOString()
-    },
-    {
-      id: 4,
-      name: 'Ayam Bakar Taliwang',
-      score: 78,
-      calories: 520,
-      imageUrl: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop',
-      timestamp: new Date(Date.now() - 172800000).toISOString()
-    }
-  ];
+
 
   function initScanner() {
     var dropzone = document.getElementById('scannerDropzone');

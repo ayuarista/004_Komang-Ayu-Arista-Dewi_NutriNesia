@@ -373,7 +373,7 @@
   height: 32px;
   border-radius: var(--radius-lg);
   background: var(--color-gray-100);
-  /* color: var(--color-primary); */
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
