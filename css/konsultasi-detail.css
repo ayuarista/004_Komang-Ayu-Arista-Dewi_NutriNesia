@@ -1,0 +1,815 @@
+/* ============================================
+   NutriNesia - Konsultasi Detail Page Styles
+   Vanilla CSS using design tokens from global.css
+   ============================================ */
+
+.kd-main {
+  max-width: var(--max-width-container, 1280px);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+/* ============================================
+   Breadcrumb
+   ============================================ */
+.kd-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.kd-breadcrumb a {
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.kd-breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+.kd-breadcrumb .material-symbols-outlined {
+  font-size: 16px;
+  color: var(--color-outline);
+}
+
+.kd-breadcrumb-current {
+  color: var(--color-on-surface);
+  font-weight: 600;
+}
+
+/* ============================================
+   Layout Grid
+   ============================================ */
+.kd-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter-bento);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .kd-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
+  }
+}
+
+.kd-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-bento);
+}
+
+@media (min-width: 1024px) {
+  .kd-sidebar {
+    position: sticky;
+    top: 112px;
+  }
+}
+
+.kd-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-bento);
+}
+
+/* ============================================
+   Reusable Card
+   ============================================ */
+.kd-card {
+  background: var(--color-surface-container-lowest);
+  /* border: 1px solid var(--color-surface-container-high); */
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  transition: box-shadow var(--transition-base);
+}
+
+.kd-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   Service Summary (Top of Sidebar)
+   ============================================ */
+.kd-service-card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  /* border: 1px solid rgba(255, 255, 255, 0.08); */
+}
+
+.kd-service-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.kd-verified-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.kd-verified-chip .material-symbols-outlined {
+  font-size: 14px;
+}
+
+.kd-service-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h1);
+  font-weight: 800;
+  letter-spacing: var(--letter-spacing-h1);
+  line-height: 1.2;
+  margin-bottom: var(--space-5);
+  position: relative;
+  z-index: 1;
+}
+
+.kd-nutritionist {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.kd-nutritionist-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  /* border: 2px solid rgba(255, 255, 255, 0.3); */
+  flex-shrink: 0;
+}
+
+.kd-nutritionist-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kd-nutritionist-name {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  margin-bottom: 2px;
+}
+
+.kd-nutritionist-spec {
+  font-size: var(--font-size-label-sm);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================
+   Queue / Reservation Card
+   ============================================ */
+.kd-queue-card {
+  background:white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.kd-queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+  gap: var(--space-3);
+}
+
+.kd-queue-icon-wrap {
+  padding: var(--space-3);
+  border-radius: var(--radius-xl);
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kd-queue-icon-wrap .material-symbols-outlined {
+  font-size: 28px;
+}
+
+.kd-queue-badge {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.kd-queue-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.kd-queue-desc {
+  font-size: var(--font-size-label-bold);
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-6);
+  line-height: 1.5;
+}
+
+.kd-queue-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.kd-queue-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.kd-queue-stat-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-label-bold);
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+.kd-queue-stat-left .material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.kd-queue-stat-value {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.kd-queue-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: var(--font-size-body-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-bottom: var(--space-3);
+}
+
+.kd-queue-btn:hover {
+  background: var(--color-primary-container);
+  transform: translateY(-2px);
+}
+
+.kd-queue-btn:active {
+  transform: scale(0.98);
+}
+
+.kd-queue-btn .material-symbols-outlined {
+  transition: transform var(--transition-base);
+}
+
+.kd-queue-btn:hover .material-symbols-outlined {
+  transform: translateX(4px);
+}
+
+.kd-queue-note {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+/* ============================================
+   Support Card
+   ============================================ */
+.kd-support-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-surface-container-low);
+  border-radius: var(--radius-xl);
+}
+
+.kd-support-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-surface-container-lowest);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kd-support-title {
+  font-size: var(--font-size-label-sm);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin-bottom: 2px;
+}
+
+.kd-support-link {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.kd-support-link:hover {
+  color: var(--color-primary-container);
+}
+
+/* ============================================
+   Header / Description Card
+   ============================================ */
+.kd-description-card {
+  background: var(--color-surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+}
+
+.kd-description-card p {
+  font-size: var(--font-size-body-md);
+  line-height: 1.6;
+  color: var(--color-on-surface);
+}
+
+/* ============================================
+   Section Heading
+   ============================================ */
+.kd-section-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  color: var(--color-primary);
+}
+
+.kd-section-heading .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.kd-section-heading h2 {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-h2);
+  color: var(--color-on-surface);
+}
+
+/* ============================================
+   Two-column info grid
+   ============================================ */
+.kd-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter-bento);
+}
+
+@media (min-width: 768px) {
+  .kd-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.kd-info-text {
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+}
+
+/* Session detail rows */
+.kd-session-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.kd-session-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.kd-session-item .material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+.kd-session-label {
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+  font-weight: 600;
+}
+
+.kd-session-value {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+/* ============================================
+   Topic Checklist
+   ============================================ */
+.kd-topic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .kd-topic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.kd-topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.kd-topic-item:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-primary-fixed-dim);
+}
+
+.kd-topic-item .material-symbols-outlined {
+  color: var(--color-secondary);
+  font-size: 22px;
+  font-variation-settings: 'FILL' 1;
+  flex-shrink: 0;
+}
+
+.kd-topic-item p {
+  font-size: var(--font-size-body-md);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  line-height: 1.4;
+}
+
+/* ============================================
+   Benefits Card
+   ============================================ */
+.kd-benefits-card {
+  background: linear-gradient(135deg, var(--color-surface-container-low), var(--color-primary-fixed));
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.kd-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .kd-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.kd-benefit {
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.kd-benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+}
+
+.kd-benefit-icon .material-symbols-outlined {
+  font-size: 28px;
+}
+
+.kd-benefit-icon.energy {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.kd-benefit-icon.focus {
+  background: var(--color-primary-fixed);
+  color: var(--color-primary);
+}
+
+.kd-benefit-icon.savings {
+  background: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.kd-benefit-title {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-1);
+}
+
+.kd-benefit-desc {
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}
+
+/* ============================================
+   Schedule Card
+   ============================================ */
+.kd-schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.kd-month-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-gray-50);
+  color: var(--color-on-surface);
+  font-weight: 600;
+  font-size: var(--font-size-label-bold);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.kd-month-pill:hover {
+  background: var(--color-gray-100);
+}
+
+.kd-month-pill .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--color-on-surface-variant);
+}
+
+.kd-day-strip {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scroll-snap-type: x mandatory;
+}
+
+.kd-day-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.kd-day {
+  flex: 1;
+  min-width: 72px;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-gray-50);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  scroll-snap-align: start;
+  font-family: var(--font-family);
+}
+
+.kd-day:hover {
+  background: var(--color-gray-100);
+}
+
+.kd-day-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-1);
+}
+
+.kd-day-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.kd-day.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.kd-day.active .kd-day-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.kd-day.active .kd-day-num {
+  color: var(--color-on-primary);
+}
+
+.kd-day.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.kd-timeslot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .kd-timeslot-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.kd-timeslot {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: transparent;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.kd-timeslot:hover {
+  color: var(--color-primary);
+}
+
+.kd-timeslot.active {
+  background: var(--color-primary-fixed);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   Testimonial
+   ============================================ */
+.kd-testimonial {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-gray-50);
+}
+
+.kd-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.kd-testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kd-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.kd-testimonial-name {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.kd-testimonial-stars {
+  display: inline-flex;
+  color: var(--color-star);
+}
+
+.kd-testimonial-stars .material-symbols-outlined {
+  font-size: 16px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.kd-testimonial-text {
+  font-size: var(--font-size-label-bold);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+/* ============================================
+   FAQ / Details
+   ============================================ */
+.kd-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.kd-faq-item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-surface-container-high);
+}
+
+.kd-faq-item:last-child {
+  border-bottom: none;
+}
+
+.kd-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  gap: var(--space-3);
+  transition: color var(--transition-base);
+}
+
+.kd-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.kd-faq-q {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  transition: color var(--transition-base);
+}
+
+.kd-faq-item[open] .kd-faq-q {
+  color: var(--color-primary);
+}
+
+.kd-faq-item summary .material-symbols-outlined {
+  color: var(--color-on-surface-variant);
+  transition: transform var(--transition-base);
+}
+
+.kd-faq-item[open] summary .material-symbols-outlined {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+.kd-faq-a {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+}

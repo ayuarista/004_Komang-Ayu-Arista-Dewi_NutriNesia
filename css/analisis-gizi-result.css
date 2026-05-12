@@ -1,0 +1,32 @@
+/* ============================================
+   NutriNesia - Analisis Gizi Result Styles
+   ============================================ */
+
+@import url("./analisis-gizi.css");
+
+.score-card.has-result {
+  border: none;
+  box-shadow: none;
+}
+
+.alternative-list-active {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2);
+  gap: var(--space-1);
+}
+
+.alternative-item {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.alternative-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(4px);
+}
+
+/* History in result page uses shared .history-item from analisis-gizi.css */

@@ -1,0 +1,726 @@
+/* ============================================
+   NutriNesia - Konsultasi Page Styles
+   Vanilla CSS using design tokens from global.css
+   ============================================ */
+
+.konsultasi-main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.konsultasi-hero {
+  position: relative;
+  margin-bottom: var(--space-16);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+  padding: var(--space-12);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.konsultasi-hero-content {
+  flex: 1 1 360px;
+  z-index: 2;
+  color: var(--color-on-primary);
+}
+
+.konsultasi-hero-badge {
+  display: inline-block;
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-label-sm);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.konsultasi-hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-5);
+  color: var(--color-on-primary);
+}
+
+.konsultasi-hero-desc {
+  font-size: var(--font-size-body-lg);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-8);
+  max-width: 540px;
+}
+
+.konsultasi-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.konsultasi-btn-primary,
+.konsultasi-btn-ghost {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  font-family: var(--font-family);
+}
+
+.konsultasi-btn-primary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.konsultasi-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.konsultasi-btn-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  backdrop-filter: blur(8px);
+}
+
+.konsultasi-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.konsultasi-hero-visual {
+  flex: 1 1 360px;
+  position: relative;
+  z-index: 1;
+}
+
+.konsultasi-hero-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+}
+
+.konsultasi-hero-floating-card {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-xl);
+}
+
+.konsultasi-floating-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.konsultasi-floating-title {
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  color: var(--color-on-surface);
+}
+
+.konsultasi-floating-subtitle {
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+}
+
+@media (max-width: 900px) {
+  .konsultasi-hero {
+    padding: var(--space-8);
+  }
+  .konsultasi-hero-visual {
+    display: none;
+  }
+}
+
+/* ============================================
+   Section Toolbar (Search & Filter)
+   ============================================ */
+.konsultasi-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.konsultasi-section-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-h1);
+  color: var(--color-on-surface);
+}
+
+.konsultasi-search-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  max-width: 400px;
+  min-width: 260px;
+}
+
+.konsultasi-search-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.konsultasi-search-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-outline);
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.konsultasi-search-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12);
+  background: var(--color-surface-container-low);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface-variant);
+  outline: none;
+  border: 1px solid var(--color-gray-400);
+  transition: all var(--transition-base);
+  font-family: var(--font-family);
+}
+
+.konsultasi-search-input:focus {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(53, 37, 205, 0.1);
+}
+
+.konsultasi-categories {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding: 4px 0 16px;
+  margin-bottom: var(--space-8);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.konsultasi-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.konsultasi-category-chip {
+  padding: 8px 18px;
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.konsultasi-category-chip:hover {
+  background: var(--color-surface-container);
+  color: var(--color-primary);
+}
+
+.konsultasi-category-chip.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(53, 37, 205, 0.2);
+}
+
+.konsultasi-filter-item {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border-bottom: 1px solid var(--color-surface-container-high);
+}
+
+.konsultasi-filter-item:last-child {
+  border-bottom: none;
+}
+
+.konsultasi-filter-item:hover {
+  background: var(--color-surface-container);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+.konsultasi-empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+  text-align: center;
+}
+
+.konsultasi-empty-state .material-symbols-outlined {
+  font-size: 64px;
+  color: var(--color-outline);
+  margin-bottom: var(--space-4);
+}
+
+.konsultasi-empty-title {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-2);
+}
+
+.konsultasi-empty-desc {
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface-variant);
+}
+
+/* ============================================
+   Catalog Grid
+   ============================================ */
+.konsultasi-catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter-bento);
+}
+
+@media (min-width: 640px) {
+  .konsultasi-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .konsultasi-catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .konsultasi-catalog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================
+   Consultation Card
+   ============================================ */
+.konsultasi-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  cursor: pointer;
+}
+
+.konsultasi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-fixed-dim);
+}
+
+.konsultasi-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.konsultasi-tag {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.konsultasi-tag-lifestyle {
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
+
+.konsultasi-tag-diabetes {
+  background: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed);
+}
+
+.konsultasi-tag-weight {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.konsultasi-tag-beginner {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.konsultasi-tag-hormonal {
+  background: var(--color-purple-50);
+  color: var(--color-purple-600);
+}
+
+.konsultasi-tag-worklife {
+  background: var(--color-blue-100);
+  color: var(--color-blue-600);
+}
+
+.konsultasi-tag-elderly {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.konsultasi-tag-digestive {
+  background: var(--color-orange-100);
+  color: var(--color-orange-600);
+}
+
+.konsultasi-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: #fef3c7;
+  color: #d97706;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-label-sm);
+  font-weight: 600;
+}
+
+.konsultasi-rating .material-symbols-outlined {
+  font-size: 14px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.konsultasi-card-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-h3);
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.konsultasi-card-link {
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.konsultasi-card-link:hover .konsultasi-card-title {
+  color: var(--color-primary);
+}
+
+.konsultasi-doctor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.konsultasi-doctor-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-surface-container);
+}
+
+.konsultasi-doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.konsultasi-doctor-name {
+  font-size: var(--font-size-label-bold);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.konsultasi-doctor-spec {
+  font-size: 11px;
+  color: var(--color-on-surface-variant);
+}
+
+.konsultasi-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
+}
+
+.konsultasi-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-label-bold);
+  color: var(--color-on-surface-variant);
+}
+
+.konsultasi-meta-row .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.konsultasi-meta-row.highlight {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.konsultasi-meta-row.warning {
+  color: var(--color-tertiary);
+  font-weight: 700;
+}
+
+.konsultasi-card-action {
+  width: 100%;
+  padding: var(--space-3);
+  background: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid #e5e5e5;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  position: relative;
+}
+
+.konsultasi-card-action::after {
+  content: 'arrow_forward';
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all var(--transition-base);
+}
+
+/* Hover on card triggers button hover */
+.konsultasi-card:hover .konsultasi-card-action,
+.konsultasi-card-action:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 0, 169, 0.25);
+}
+
+.konsultasi-card:hover .konsultasi-card-action::after,
+.konsultasi-card-action:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.konsultasi-card-action:active {
+  transform: scale(0.98);
+}
+
+.konsultasi-card-action-disabled {
+  width: 100%;
+  padding: var(--space-3);
+  background: var(--color-surface-container);
+  color: var(--color-outline);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  cursor: not-allowed;
+}
+
+/* ============================================
+   Featured Section (Bottom)
+   ============================================ */
+.konsultasi-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter-bento);
+  margin-top: var(--space-20);
+}
+
+@media (min-width: 900px) {
+  .konsultasi-featured {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.konsultasi-featured-card {
+  background: var(--color-secondary-container);
+  border: 1px solid rgba(71, 104, 0, 0.15);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.konsultasi-featured-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-h1);
+  color: var(--color-on-secondary-container);
+  margin-bottom: var(--space-3);
+}
+
+.konsultasi-featured-desc {
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-secondary-container);
+  opacity: 0.8;
+  max-width: 480px;
+  margin-bottom: var(--space-6);
+  line-height: 1.5;
+}
+
+.konsultasi-featured-btn {
+  align-self: flex-start;
+  background: var(--color-on-secondary-container);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.konsultasi-featured-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.konsultasi-cta-card {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.konsultasi-cta-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary-fixed);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+
+.konsultasi-cta-icon .material-symbols-outlined {
+  font-size: 30px;
+}
+
+.konsultasi-cta-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-2);
+}
+
+.konsultasi-cta-desc {
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-5);
+  line-height: 1.5;
+}
+
+.konsultasi-cta-btn {
+  width: 100%;
+  padding: var(--space-3);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: var(--font-size-label-bold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.konsultasi-cta-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ============================================
+   Card stagger entrance animation
+   ============================================ */
+@keyframes konsultasiCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.konsultasi-card {
+  animation: konsultasiCardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.konsultasi-card:nth-child(1) { animation-delay: 0.05s; }
+.konsultasi-card:nth-child(2) { animation-delay: 0.1s; }
+.konsultasi-card:nth-child(3) { animation-delay: 0.15s; }
+.konsultasi-card:nth-child(4) { animation-delay: 0.2s; }
+.konsultasi-card:nth-child(5) { animation-delay: 0.25s; }
+.konsultasi-card:nth-child(6) { animation-delay: 0.3s; }
+.konsultasi-card:nth-child(7) { animation-delay: 0.35s; }
+.konsultasi-card:nth-child(8) { animation-delay: 0.4s; }

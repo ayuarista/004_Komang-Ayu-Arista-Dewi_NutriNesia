@@ -1,0 +1,442 @@
+/* ============================================
+   NutriNesia - Recipe Detail Styles
+   ============================================ */
+
+.rsd-main {
+      max-width: var(--max-width-container, 1280px);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+/* --- Hero Section --- */
+.rsd-hero {
+    position: relative;
+    height: 500px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    margin-bottom: var(--space-8);
+}
+
+.rsd-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.rsd-hero:hover .rsd-hero-img {
+    transform: scale(1.05);
+}
+
+.rsd-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+}
+
+.rsd-hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    color: var(--color-white);
+}
+
+.rsd-hero-badges {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.rsd-badge {
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-label-bold);
+    font-weight: 700;
+}
+
+.rsd-badge.primary {
+    background: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
+}
+
+.rsd-badge.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--color-white);
+}
+
+.rsd-hero-title {
+    font-size: var(--font-size-display);
+    font-weight: 800;
+    line-height: var(--line-height-display);
+    margin: 0;
+}
+
+.rsd-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin-top: var(--space-2);
+}
+
+.rsd-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.rsd-meta-item span {
+    color: var(--color-secondary-fixed);
+}
+
+.rsd-save-btn {
+    position: absolute;
+    bottom: var(--space-10);
+    right: var(--space-10);
+    background: var(--color-primary-container);
+    color: var(--color-white);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    box-shadow: var(--shadow-xl);
+    transition: all var(--transition-spring);
+}
+
+.rsd-save-btn:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-2xl);
+}
+
+.rsd-save-btn:active {
+    transform: scale(0.95);
+}
+
+/* --- Layout Grid --- */
+.rsd-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gutter-bento);
+}
+
+@media (min-width: 1024px) {
+    .rsd-grid {
+        grid-template-columns: 8fr 4fr;
+    }
+}
+
+/* --- Cards --- */
+.rsd-card {
+    background: var(--color-surface-container-lowest);
+    border-radius: var(--radius-2xl);
+    padding: var(--cell-padding);
+}
+
+.rsd-card-title {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.rsd-card-title span {
+    font-size: 28px;
+}
+
+/* --- Ingredients --- */
+.rsd-ingredients-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+@media (min-width: 640px) {
+    .rsd-ingredients-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.rsd-ingredient {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+}
+
+.rsd-ingredient-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary-container);
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+
+/* --- Steps --- */
+.rsd-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    position: relative;
+    padding-left: var(--space-10);
+}
+
+.rsd-steps::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-surface-container-high);
+}
+
+.rsd-step {
+    position: relative;
+}
+
+.rsd-step-number {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary-container);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.rsd-step-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .rsd-step-content {
+        flex-direction: row;
+    }
+}
+
+.rsd-step-text {
+    flex: 1;
+    padding-left: var(--space-4);
+}
+
+.rsd-step-title {
+    font-size: var(--font-size-label-bold);
+    font-size: 18px;
+    color: var(--color-on-surface);
+    margin-bottom: var(--space-2);
+}
+
+.rsd-step-desc {
+    color: var(--color-on-surface-variant);
+    line-height: 1.6;
+}
+
+.rsd-step-img-wrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-outline-variant);
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .rsd-step-img-wrapper {
+        width: 240px;
+    }
+}
+
+.rsd-step-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Nutritional Breakdown --- */
+.rsd-nutrition-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.rsd-nutrition-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rsd-nutrition-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-on-surface);
+}
+
+.rsd-nutrition-dot {
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.rsd-nutrition-value {
+    margin-left: auto;
+    font-size: 14px;
+    color: var(--color-on-surface-variant);
+    font-weight: 500;
+}
+
+.rsd-nutrition-value strong {
+    color: var(--color-on-surface);
+    font-weight: 800;
+}
+
+.rsd-nutrition-bar {
+    height: 6px;
+    background: var(--color-surface-container-low);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.rsd-nutrition-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Colors and Gradients Sync */
+.dot-protein { background: #4338ca; }
+.fill-protein { background: linear-gradient(to right, #4338ca, #818cf8); }
+
+.dot-carbs { background: #65a30d; }
+.fill-carbs { background: linear-gradient(to right, #65a30d, #a3e635); }
+
+.dot-fat { background: #d97706; }
+.fill-fat { background: linear-gradient(to right, #d97706, #fbbf24); }
+
+.dot-fiber { background: #0ea5e9; }
+.fill-fiber { background: linear-gradient(to right, #0ea5e9, #7dd3fc); }
+
+.dot-sugar { background: #991b1b; }
+.fill-sugar { background: linear-gradient(to right, #991b1b, #f87171); }
+
+.rsd-nutri-grade {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.rsd-grade-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 4px solid var(--color-secondary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.rsd-grade-info h4 {
+    color: var(--color-secondary);
+    margin: 0;
+}
+
+.rsd-grade-info p {
+    font-size: var(--font-size-label-sm);
+    color: var(--color-on-surface-variant);
+    margin: 0;
+}
+
+/* --- Sidebar Specific Cards --- */
+.rsd-card.accent {
+    background: var(--color-primary-container);
+    color: var(--color-white);
+    border: none;
+}
+
+.rsd-card.accent .rsd-card-title {
+    color: var(--color-white);
+}
+
+.rsd-insight-box {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rsd-insight-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: var(--space-1);
+}
+
+.rsd-insight-text {
+    font-weight: 700;
+}
+
+.rsd-cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rsd-cost-value {
+    font-size: var(--font-size-h1);
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 640px) {
+    .rsd-hero {
+        height: 400px;
+    }
+    .rsd-hero-title {
+        font-size: 32px;
+    }
+    .rsd-save-btn {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-4);
+    }
+}
