@@ -41,7 +41,3 @@ Contoh tampilannya:
 
 Setelah berhasil, website NutriNesia akan otomatis terbuka di browser.
 <img width="2864" height="1479" alt="image" src="https://github.com/user-attachments/assets/2aed9ef7-0607-4779-a54a-9cf9bed43b62" />
-
-
-```
-```
