@@ -248,11 +248,25 @@
   flex-shrink: 0;
 }
 
-.pn-macro-dot.protein { background: #4338ca; }
-.pn-macro-dot.carbs { background: #65a30d; }
-.pn-macro-dot.fat { background: #d97706; }
-.pn-macro-dot.fiber { background: #0ea5e9; }
-.pn-macro-dot.sugar { background: #991b1b; }
+.pn-macro-dot.protein {
+  background: #4338ca;
+}
+
+.pn-macro-dot.carbs {
+  background: #65a30d;
+}
+
+.pn-macro-dot.fat {
+  background: #d97706;
+}
+
+.pn-macro-dot.fiber {
+  background: #0ea5e9;
+}
+
+.pn-macro-dot.sugar {
+  background: #991b1b;
+}
 
 .pn-macro-value {
   font-size: 11px;
@@ -1431,6 +1445,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1443,18 +1458,49 @@
   animation: pnCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
-.pn-meal-card:nth-child(1) { animation-delay: 0.05s; }
-.pn-meal-card:nth-child(2) { animation-delay: 0.1s; }
-.pn-meal-card:nth-child(3) { animation-delay: 0.15s; }
-.pn-meal-card:nth-child(4) { animation-delay: 0.2s; }
+.pn-meal-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
 
-.pn-week-day:nth-child(1) { animation-delay: 0.05s; }
-.pn-week-day:nth-child(2) { animation-delay: 0.08s; }
-.pn-week-day:nth-child(3) { animation-delay: 0.11s; }
-.pn-week-day:nth-child(4) { animation-delay: 0.14s; }
-.pn-week-day:nth-child(5) { animation-delay: 0.17s; }
-.pn-week-day:nth-child(6) { animation-delay: 0.2s; }
-.pn-week-day:nth-child(7) { animation-delay: 0.23s; }
+.pn-meal-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.pn-meal-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.pn-meal-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.pn-week-day:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.pn-week-day:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.pn-week-day:nth-child(3) {
+  animation-delay: 0.11s;
+}
+
+.pn-week-day:nth-child(4) {
+  animation-delay: 0.14s;
+}
+
+.pn-week-day:nth-child(5) {
+  animation-delay: 0.17s;
+}
+
+.pn-week-day:nth-child(6) {
+  animation-delay: 0.2s;
+}
+
+.pn-week-day:nth-child(7) {
+  animation-delay: 0.23s;
+}
 
 /* ============================================
    NEW: MENU HEMAT PELAJAR - Horizontal Scroll Cards
@@ -1861,13 +1907,38 @@
   animation: pnCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
-.pn-budget-card-new:nth-child(1) { animation-delay: 0.05s; }
-.pn-budget-card-new:nth-child(2) { animation-delay: 0.1s; }
-.pn-budget-card-new:nth-child(3) { animation-delay: 0.15s; }
-.pn-budget-card-new:nth-child(4) { animation-delay: 0.2s; }
-.pn-budget-card-new:nth-child(5) { animation-delay: 0.25s; }
+.pn-budget-card-new:nth-child(1) {
+  animation-delay: 0.05s;
+}
 
-.pn-stat-card:nth-child(1) { animation-delay: 0.05s; }
-.pn-stat-card:nth-child(2) { animation-delay: 0.1s; }
-.pn-stat-card:nth-child(3) { animation-delay: 0.15s; }
-.pn-stat-card:nth-child(4) { animation-delay: 0.2s; }
+.pn-budget-card-new:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.pn-budget-card-new:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.pn-budget-card-new:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.pn-budget-card-new:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.pn-stat-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.pn-stat-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.pn-stat-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.pn-stat-card:nth-child(4) {
+  animation-delay: 0.2s;
+}

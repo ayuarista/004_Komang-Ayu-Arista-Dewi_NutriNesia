@@ -3,7 +3,40 @@
 
   // Constants
   const HISTORY_KEY = 'nutrinesia-scan-history';
-
+  const DEFAULT_HISTORY = [
+    {
+      id: 1,
+      name: 'Gado-gado',
+      score: 94,
+      calories: 345,
+      imageUrl: '../images/gado-gado.png',
+      timestamp: new Date(Date.now() - 3600000).toISOString()
+    },
+    {
+      id: 2,
+      name: 'Nasi Goreng',
+      score: 86,
+      calories: 420,
+      imageUrl: '../images/nasi-goreng.png',
+      timestamp: new Date(Date.now() - 14400000).toISOString()
+    },
+    {
+      id: 3,
+      name: 'Oatmeal',
+      score: 92,
+      calories: 280,
+      imageUrl: '../images/oatmeal.jpg',
+      timestamp: new Date(Date.now() - 86400000).toISOString()
+    },
+    {
+      id: 4,
+      name: 'Pecel Lele',
+      score: 78,
+      calories: 520,
+      imageUrl: '../images/pecel-lele.png',
+      timestamp: new Date(Date.now() - 172800000).toISOString()
+    }
+  ];
 
   function initScanner() {
     var dropzone = document.getElementById('scannerDropzone');
