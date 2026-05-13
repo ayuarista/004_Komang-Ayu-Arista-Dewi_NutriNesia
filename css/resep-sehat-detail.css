@@ -70,7 +70,7 @@
 }
 
 .rsd-hero-title {
-    font-size: var(--font-size-display);
+    font-size: var(--font-size-h1);
     font-weight: 800;
     line-height: var(--line-height-display);
     margin: 0;
@@ -141,7 +141,7 @@
 }
 
 .rsd-card-title {
-    font-size: var(--font-size-h2);
+    font-size: 18px;
     color: var(--color-primary);
     margin-bottom: var(--space-6);
     display: flex;
@@ -414,19 +414,74 @@
 }
 
 .rsd-cost-value {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h2);
     color: var(--color-primary);
     font-weight: 800;
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 640px) {
-    .rsd-hero {
-        height: 400px;
+@media (max-width: 768px) {
+    .rsd-main {
+        padding: var(--space-8) var(--space-4);
     }
+
+    .rsd-hero {
+        height: 380px;
+    }
+
     .rsd-hero-title {
         font-size: 32px;
     }
+
+    .rsd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rsd-ingredients-list {
+        grid-template-columns: 1fr;
+    }
+
+    .rsd-step-content {
+        flex-direction: column;
+    }
+
+    .rsd-step-img-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .rsd-step-title {
+        font-size: 16px;
+    }
+
+    .rsd-nutrition-header {
+        font-size: 14px;
+    }
+
+    .rsd-grade-circle {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .rsd-main {
+        padding: var(--space-6) var(--space-3);
+    }
+
+    .rsd-hero {
+        height: 320px;
+    }
+
+    .rsd-hero-title {
+        font-size: 26px;
+    }
+
+    .rsd-hero-content {
+        padding: var(--space-6);
+    }
+
     .rsd-save-btn {
         position: relative;
         bottom: 0;
@@ -434,5 +489,154 @@
         width: 100%;
         justify-content: center;
         margin-top: var(--space-4);
+    }
+
+    .rsd-card {
+        padding: var(--space-5);
+    }
+
+    .rsd-card-title {
+        font-size: 16px;
+    }
+
+    .rsd-ingredient {
+        font-size: 13px;
+    }
+
+    .rsd-step-number {
+        left: -32px;
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .rsd-step-title {
+        font-size: 14px;
+    }
+
+    .rsd-step-desc {
+        font-size: 12px;
+    }
+
+    .rsd-step-img-wrapper {
+        height: 160px;
+    }
+
+    .rsd-nutrition-header {
+        font-size: 13px;
+    }
+
+    .rsd-nutrition-value {
+        font-size: 12px;
+    }
+
+    .rsd-grade-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .rsd-grade-info h4 {
+        font-size: 13px;
+    }
+
+    .rsd-grade-info p {
+        font-size: 11px;
+    }
+
+    .rsd-cost-value {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rsd-main {
+        padding: var(--space-5) var(--space-3);
+    }
+
+    .rsd-hero {
+        height: 280px;
+    }
+
+    .rsd-hero-title {
+        font-size: 22px;
+    }
+
+    .rsd-hero-content {
+        padding: var(--space-5);
+    }
+
+    .rsd-badge {
+        font-size: 9px;
+    }
+
+    .rsd-meta-item {
+        font-size: 11px;
+    }
+
+    .rsd-save-btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: 12px;
+    }
+
+    .rsd-card {
+        padding: var(--space-4);
+    }
+
+    .rsd-card-title {
+        font-size: 15px;
+    }
+
+    .rsd-ingredient {
+        font-size: 12px;
+    }
+
+    .rsd-steps {
+        padding-left: var(--space-10);
+    }
+
+    .rsd-step-number {
+        left: -34px;
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .rsd-step-title {
+        font-size: 13px;
+    }
+
+    .rsd-step-desc {
+        font-size: 11px;
+    }
+
+    .rsd-step-img-wrapper {
+        height: 140px;
+    }
+
+    .rsd-nutrition-header {
+        font-size: 12px;
+    }
+
+    .rsd-nutrition-value {
+        font-size: 11px;
+    }
+
+    .rsd-grade-circle {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .rsd-grade-info h4 {
+        font-size: 12px;
+    }
+
+    .rsd-grade-info p {
+        font-size: 10px;
+    }
+
+    .rsd-cost-value {
+        font-size: 18px;
     }
 }

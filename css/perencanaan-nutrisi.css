@@ -993,7 +993,7 @@
 
 .pn-budget-heading h3 {
   font-family: var(--font-family);
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: var(--color-on-surface);
   letter-spacing: var(--letter-spacing-h1);
@@ -1371,6 +1371,124 @@
   background: var(--color-secondary);
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .pn-main {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .pn-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .pn-hero-greeting {
+    font-size: 1.25rem;
+  }
+
+  .pn-ring-wrap {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pn-meal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pn-week-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .pn-week-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pn-progress-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pn-modal {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .pn-recipe-ingredients {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .pn-main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .pn-hero-greeting {
+    font-size: 1.1rem;
+  }
+
+  .pn-hero-goal {
+    font-size: 12px;
+  }
+
+  .pn-ring-wrap {
+    width: 90px;
+    height: 90px;
+  }
+
+  .pn-ring-number {
+    font-size: 16px;
+  }
+
+  .pn-calorie-info h3 {
+    font-size: 13px;
+  }
+
+  .pn-macros-title {
+    font-size: 13px;
+  }
+
+  .pn-macro-name {
+    font-size: 12px;
+  }
+
+  .pn-section-titles h2 {
+    font-size: 16px;
+  }
+
+  .pn-meal-title {
+    font-size: 13px;
+  }
+
+  .pn-meal-calories strong {
+    font-size: 16px;
+  }
+
+  .pn-week-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pn-day-label {
+    font-size: 9px;
+  }
+
+  .pn-score-grade {
+    font-size: 32px;
+  }
+
+  .pn-budget-card-new {
+    min-width: 240px;
+  }
+
+  .pn-modal-title {
+    font-size: 18px;
+  }
+
+  .pn-swap-option-name {
+    font-size: 13px;
+  }
 }
 
 .pn-recipe-steps {

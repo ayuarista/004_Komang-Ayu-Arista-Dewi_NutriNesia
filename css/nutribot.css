@@ -32,7 +32,8 @@
   height: 85px;
   object-fit: contain;
   transition: transform 0.3s ease;
-  position: absolute; /* To center it perfectly */
+  position: absolute;
+  /* To center it perfectly */
   top: -3px;
 }
 
@@ -57,8 +58,17 @@
 }
 
 @keyframes nb-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.18); opacity: 0; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
 }
 
 .nb-tooltip {
@@ -79,16 +89,29 @@
   opacity: 0;
   transform: translateY(10px) scale(0.9);
   transform-origin: bottom right;
-  animation: nb-tooltip-show 6s ease-in-out 3s forwards; /* Shows for 6 seconds, starting 3s after page load */
+  animation: nb-tooltip-show 6s ease-in-out 3s forwards;
+  /* Shows for 6 seconds, starting 3s after page load */
 }
 
 @keyframes nb-tooltip-show {
-  0% { opacity: 0; transform: translateY(10px) scale(0.9); }
-  10%, 90% { opacity: 1; transform: translateY(0) scale(1); }
-  100% { opacity: 0; transform: translateY(10px) scale(0.9); }
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
 }
 
-.nb-fab.open ~ .nb-tooltip {
+.nb-fab.open~.nb-tooltip {
   display: none !important;
 }
 
@@ -214,9 +237,18 @@
   scroll-behavior: smooth;
 }
 
-.nb-messages::-webkit-scrollbar { width: 4px; }
-.nb-messages::-webkit-scrollbar-track { background: transparent; }
-.nb-messages::-webkit-scrollbar-thumb { background: var(--color-outline-variant); border-radius: 4px; }
+.nb-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.nb-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nb-messages::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
 
 /* Message bubbles */
 .nb-msg {
@@ -227,12 +259,25 @@
 }
 
 @keyframes nb-msgIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.nb-msg.bot { align-self: flex-start; }
-.nb-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+.nb-msg.bot {
+  align-self: flex-start;
+}
+
+.nb-msg.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
 
 .nb-msg-icon {
   width: 28px;
@@ -295,7 +340,9 @@
   padding: 0 36px;
 }
 
-.nb-msg.user + .nb-time { text-align: right; }
+.nb-msg.user+.nb-time {
+  text-align: right;
+}
 
 /* Typing indicator */
 .nb-typing {
@@ -343,12 +390,27 @@
   animation: nb-dotBounce 1.4s ease-in-out infinite;
 }
 
-.nb-typing-dots span:nth-child(2) { animation-delay: 0.15s; }
-.nb-typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+.nb-typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.nb-typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
 @keyframes nb-dotBounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30% { transform: translateY(-6px); opacity: 1; }
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
 }
 
 /* ============================================
@@ -466,7 +528,18 @@
     height: 54px;
   }
 
-  .nb-fab .material-symbols-outlined { font-size: 24px; }
+  .nb-fab img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: -10px;
+  }
+
+  .nb-fab .material-symbols-outlined {
+    font-size: 24px;
+  }
 
   .nb-panel {
     bottom: 0;
