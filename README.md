@@ -1,3 +1,13 @@
+# Nama Peserta: Komang Ayu Arista Dewi
+# Asal Sekolah: SMKN 1 Denpasar
+# Judul Website: NutriNesia
+# Deskripsi singkat: 
+NutriNesia adalah platform kesehatan dan nutrisi yang membantu masyarakat memahami pola makan, memantau asupan harian, serta membangun gaya hidup sehat yang lebih terarah dan berkelanjutan. Melalui fitur analisis gizi, perencanaan nutrisi, resep sehat, challenge sehat, konsultasi gratis, hingga komunitas aktif, NutriNesia hadir sebagai pendamping digital untuk membantu pengguna mencapai target kesehatan mereka dengan cara yang lebih mudah, modern, dan menyenangkan.
+# Teknologi yang digunakan
+* HTML
+* CSS
+* JAVASCRIPT
+
 # Cara Menjalankan Project NutriNesia
 
 ## Persiapan
