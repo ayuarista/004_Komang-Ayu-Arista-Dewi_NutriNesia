@@ -30,45 +30,43 @@
     groups.forEach(function (el) { groupObs.observe(el); });
   }
 
-  /* ---- Testimonials Carousel (Flickity) ---- */
+  /* ---- Testimonials Carousel (Swiper) ---- */
   function initTestiCarousel() {
     var tnEl = document.querySelector('.tn-carousel');
-    if (!tnEl || typeof Flickity === 'undefined') return;
+    if (!tnEl || typeof Swiper === 'undefined') return;
 
-    var flkty = new Flickity(tnEl, {
-      cellAlign: 'left',
-      contain: true,
-      wrapAround: true,
-      pageDots: false,
-      prevNextButtons: false,
-      draggable: true,
-      freeScroll: false
+    var swiper = new Swiper(tnEl, {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      allowTouchMove: true
     });
 
     var btnPrev = document.querySelector('.tn-nav-btn.prev');
     var btnNext = document.querySelector('.tn-nav-btn.next');
-    if (btnPrev) btnPrev.addEventListener('click', function () { flkty.previous(true); });
-    if (btnNext) btnNext.addEventListener('click', function () { flkty.next(true); });
+    if (btnPrev) btnPrev.addEventListener('click', function () { swiper.slidePrev(); });
+    if (btnNext) btnNext.addEventListener('click', function () { swiper.slideNext(); });
   }
 
-  /* ---- Features Image Carousel (Flickity) ---- */
+  /* ---- Features Image Carousel (Swiper) ---- */
   function initFeaturesCarousel() {
-    var wrapper = document.querySelector('.fa-main-carousel-wrapper');
-    if (!wrapper || typeof Flickity === 'undefined') return;
+    var wrapper = document.querySelector('.swiper.fa-main-carousel-wrapper');
+    if (!wrapper || typeof Swiper === 'undefined') return;
 
-    var flkty = new Flickity(wrapper, {
-      cellAlign: 'left',
-      contain: true,
-      wrapAround: true,
-      pageDots: false,
-      prevNextButtons: false,
-      adaptiveHeight: false
+    var swiper = new Swiper(wrapper, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      speed: 600,
+      grabCursor: true
     });
 
     var btnPrev = document.querySelector('.fa-nav-btn.prev');
     var btnNext = document.querySelector('.fa-nav-btn.next');
-    if (btnPrev) btnPrev.addEventListener('click', function () { flkty.previous(true); });
-    if (btnNext) btnNext.addEventListener('click', function () { flkty.next(true); });
+    if (btnPrev) btnPrev.addEventListener('click', function () { swiper.slidePrev(); });
+    if (btnNext) btnNext.addEventListener('click', function () { swiper.slideNext(); });
   }
 
   /* ---- Features Accordion ---- */
@@ -152,15 +150,15 @@
     track.addEventListener('mouseleave', function () { track.style.animationPlayState = 'running'; });
   }
 
-  /* ---- Boot ---- */
+  /* ---- Boot (each init isolated so one failure doesn't block others) ---- */
   function boot() {
-    initReveal();
-    initTestiCarousel();
-    initFeaturesCarousel();
-    initFeaturesAccordion();
-    initFAQAccordion();
-    initCounters();
-    initLogoSlider();
+    try { initReveal(); } catch (e) { console.error('[home] Reveal:', e); }
+    try { initTestiCarousel(); } catch (e) { console.error('[home] TestiCarousel:', e); }
+    try { initFeaturesCarousel(); } catch (e) { console.error('[home] FeaturesCarousel:', e); }
+    try { initFeaturesAccordion(); } catch (e) { console.error('[home] FeaturesAccordion:', e); }
+    try { initFAQAccordion(); } catch (e) { console.error('[home] FAQAccordion:', e); }
+    try { initCounters(); } catch (e) { console.error('[home] Counters:', e); }
+    try { initLogoSlider(); } catch (e) { console.error('[home] LogoSlider:', e); }
   }
 
   if (document.readyState === 'loading') {
